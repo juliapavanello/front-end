@@ -1,4 +1,4 @@
-const URL = "https://backend21a-kg0v.onrender.com/pessoas"
+const URL = "https://backend21a-kg0v.onrender.com/pessoas/"
 
 var idPessoa = null
 lerParametros()

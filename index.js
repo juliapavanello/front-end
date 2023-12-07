@@ -1,4 +1,4 @@
-const URL = "https://backend21a-kg0v.onrender.com/pessoas"
+const URL_BACKEND = "https://backend21a-kg0v.onrender.com/pessoas/"
 var listaPessoas = []
 
 function iniciarTabela(){
@@ -32,7 +32,7 @@ function adicionarPessoas(){
     cadastrarEventosLixeira()
 }
 
-fetch(URL).then(function(response) {
+fetch(URL_BACKEND).then(function(response) {
     return response.json();
 }).then(function(data) {
     listaPessoas = data
@@ -57,12 +57,13 @@ function realizarExclusao(id){
     var header = {
         method:"DELETE"
     }
-    fetch(URL+id,header)
+    fetch(URL_BACKEND+id,header)
     .then(function(response){
         return response.text()
     }).then(function(data){
         atualizarTela(id)
     }).catch(function(error){
+        console.log(error);
         alert("Erro ao deletar pessoa")
     })
 }
